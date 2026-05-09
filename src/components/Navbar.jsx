@@ -10,7 +10,7 @@ const Navbar = () => {
 
     return (
       <div className="shadow-sm sticky top-0 z-50">
-        <div className="navbar w-full lg:max-w-[1440px] md:flex justify-between items-center mx-auto px-4 bg-white">
+        <div className="navbar w-full xl:max-w-[1440px] md:flex justify-between items-center mx-auto px-4 bg-white">
           <div className="cursor-pointer text-xl font-bold flex items-center gap-2">
             <div className="md:hidden" onClick={() => setOpen(!open)}>
               {open ? <X></X> : <Menu />}

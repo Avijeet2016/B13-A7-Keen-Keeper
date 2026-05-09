@@ -28,7 +28,7 @@ const Footer = () => {
               </div>
             </div>
           </div>{" "}
-          <hr className="outline-0 text-gray-500" />
+          <hr className="border-t border-gray-300" />
           <div className="flex flex-col md:flex-row justify-between items-center py-7 text-[#fafafa]">
             <p>© 2026 KeenKeeper. All rights reserved.</p>
             <div>

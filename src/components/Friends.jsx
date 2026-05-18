@@ -1,10 +1,11 @@
 import { use } from "react";
+import { Link } from "react-router";
 
 const dataPromise = fetch('/data.json').then(res => res.json());
 
 const Friends = () => {
     const data = use(dataPromise);
-    console.log(data);
+    
 
     const getStatusClass = (status) => {
         switch (status) {
@@ -26,37 +27,38 @@ const Friends = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
           {data.map((item, index) => (
-            <div
-              key={index}
-              className="p-6 bg-[#ffffff] rounded-lg shadow-sm space-y-2"
-            >
-              <img
-                src={item.picture}
-                alt={item.name}
-                className="w-20 h-20 rounded-full mx-auto"
-              />
-              <h2 className="text-xl font-semibold">{item.name}</h2>
-              <p className="text-xs text-[#64748b]">
-                {item.days_since_contact}d ago
-              </p>
-              <div className="flex justify-center flex-wrap gap-2">
-                {item.tags.map((tag, ind) => (
+            <Link to={`/friendsDetails/${item.id}`} key={index}>
+              <div
+                className="p-6 bg-[#ffffff] rounded-lg shadow-sm space-y-2"
+              >
+                <img
+                  src={item.picture}
+                  alt={item.name}
+                  className="w-20 h-20 rounded-full mx-auto"
+                />
+                <h2 className="text-xl font-semibold">{item.name}</h2>
+                <p className="text-xs text-[#64748b]">
+                  {item.days_since_contact}d ago
+                </p>
+                <div className="flex justify-center flex-wrap gap-2">
+                  {item.tags.map((tag, ind) => (
+                    <button
+                      key={ind}
+                      className="bg-[#cbfadb] text-[#244d3f] rounded-full text-xs px-3 py-1 "
+                    >
+                      {tag.toUpperCase()}
+                    </button>
+                  ))}
+                </div>
+                <div>
                   <button
-                    key={ind}
-                    className="bg-[#cbfadb] text-[#244d3f] rounded-full text-xs px-3 py-1 "
+                    className={`text-xs font-semibold rounded-full px-3 py-1 text-white ${getStatusClass(item.status)}`}
                   >
-                    {tag.toUpperCase()}
+                    {item.status}
                   </button>
-                ))}
+                </div>
               </div>
-              <div>
-                <button
-                  className={`text-xs font-semibold rounded-full px-3 py-1 text-white ${getStatusClass(item.status)}`}
-                >
-                  {item.status}
-                </button>
-              </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

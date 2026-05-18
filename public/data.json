@@ -1,15 +1,15 @@
 [
   {
     "id": 1,
-    "name": "John Doe",
-    "picture": "https://randomuser.me/api/portraits/men/11.jpg",
-    "email": "john.doe@example.com",
-    "days_since_contact": 12,
-    "status": "On-Track",
-    "tags": ["college", "close friend"],
-    "bio": "Met in university. Love hiking together.",
-    "goal": 14,
-    "next_due_date": "2025-07-20"
+    "name": "Chris Evans",
+    "picture": "https://randomuser.me/api/portraits/men/60.jpg",
+    "email": "chris.evans@example.com",
+    "days_since_contact": 5,
+    "status": "Almost Due",
+    "tags": ["work", "developer"],
+    "bio": "Frontend developer colleague.",
+    "goal": 10,
+    "next_due_date": "2025-07-12"
   },
   {
     "id": 2,
@@ -73,16 +73,17 @@
   },
   {
     "id": 7,
-    "name": "Chris Evans",
-    "picture": "https://randomuser.me/api/portraits/men/60.jpg",
-    "email": "chris.evans@example.com",
-    "days_since_contact": 5,
-    "status": "Almost Due",
-    "tags": ["work", "developer"],
-    "bio": "Frontend developer colleague.",
-    "goal": 10,
-    "next_due_date": "2025-07-12"
+    "name": "John Doe",
+    "picture": "https://randomuser.me/api/portraits/men/11.jpg",
+    "email": "john.doe@example.com",
+    "days_since_contact": 12,
+    "status": "On-Track",
+    "tags": ["college", "close friend"],
+    "bio": "Met in university. Love hiking together.",
+    "goal": 14,
+    "next_due_date": "2025-07-20"
   },
+  
   {
     "id": 8,
     "name": "Sophia Martinez",

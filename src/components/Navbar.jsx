@@ -4,20 +4,23 @@ import { ImStatsDots } from "react-icons/im";
 import { RiHome2Line } from "react-icons/ri";
 import { Menu } from "lucide-react";
 import { X } from 'lucide-react';
+import { Link } from "react-router";
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
 
     return (
-      <div className="shadow-sm sticky top-0 z-50">
+      <div className="shadow-sm sticky top-0 z-50 bg-white">
         <div className="navbar w-full xl:max-w-[1440px] md:flex justify-between items-center mx-auto px-4 bg-white">
           <div className="cursor-pointer text-xl font-bold flex items-center gap-2">
             <div className="md:hidden" onClick={() => setOpen(!open)}>
               {open ? <X></X> : <Menu />}
             </div>
             <div className="hidden sm:block">
-              <span className=" text-[#1f2937]">Keen</span>
-              <span className=" text-[#244d3f]">Keeper</span>
+              <Link to={`/`}>
+                <span className=" text-[#1f2937]">Keen</span>
+                <span className=" text-[#244d3f]">Keeper</span>
+              </Link>
             </div>
             {open && (
               <div className="absolute top-10 left-10">
@@ -42,15 +45,15 @@ const Navbar = () => {
             <ul className="hidden md:flex justify-center items-center gap-2">
               <li className="btn btn-ghost text-[#64748b] font-medium">
                 <RiHome2Line />
-                Home
+                <Link to={`/`}>Home</Link>
               </li>
               <li className="btn btn-ghost text-[#64748b] font-medium">
                 <CiClock2 />
-                Timeline
+                <Link to={`/timeline`}>Timeline</Link>
               </li>
               <li className="btn btn-ghost text-[#64748b] font-medium">
                 <ImStatsDots />
-                Stats
+                <Link to={`/stats`}>Stats</Link>
               </li>
             </ul>
           </div>
